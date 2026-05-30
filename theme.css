@@ -1,0 +1,598 @@
+/* ============================================
+   Ailun Theme — 基于掘金 smartblue 风格
+   ============================================ */
+
+/* ---- 浅色模式变量 ---- */
+.theme-light {
+  --background-primary: #ffffff;
+  --background-secondary: #f6f8fa;
+  --background-modifier-border: #dfe2e5;
+  --text-normal: #595959;
+  --text-muted: #666;
+  --text-faint: #999;
+  --interactive-accent: #135ce0;
+  --code-background: #f8f8f8;
+}
+
+/* ---- 深色模式变量 ---- */
+.theme-dark {
+  --background-primary: #1e1e20;
+  --background-secondary: #2a2a2c;
+  --background-modifier-border: #444c56;
+  --text-normal: #e6edf3;
+  --text-muted: #8b949e;
+  --text-faint: #656d76;
+  --interactive-accent: #4493f8;
+  --code-background: #2d2d30;
+}
+
+/* ---- 背景网格 ---- */
+.theme-light .markdown-source-view,
+.theme-light .markdown-preview-view {
+  background-image:
+    linear-gradient(rgba(60, 10, 30, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(60, 10, 30, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center center;
+}
+
+.theme-dark .markdown-source-view,
+.theme-dark .markdown-preview-view {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center center;
+}
+
+/* ============================================
+   全局字体与正文
+   ============================================ */
+
+body {
+  --font-text-size: 15px;
+  --file-line-width: 780px;
+  --font-text-theme: -apple-system, system-ui, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  --font-monospace-theme: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.markdown-preview-view {
+  font-size: 15px;
+  color: #595959;
+  line-height: 2;
+}
+
+.theme-dark .markdown-preview-view {
+  color: var(--text-normal);
+}
+
+/* ============================================
+   段落
+   ============================================ */
+
+.markdown-preview-view p {
+  color: #595959;
+  font-size: 15px;
+  line-height: 2;
+  font-weight: 400;
+  margin: 0 0 16px;
+}
+
+.theme-dark .markdown-preview-view p {
+  color: var(--text-normal);
+}
+
+/* ============================================
+   标题（预览模式）
+   ============================================ */
+
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  color: #135ce0;
+  margin: 0;
+  padding: 0;
+}
+
+.theme-dark .markdown-preview-view h1,
+.theme-dark .markdown-preview-view h2,
+.theme-dark .markdown-preview-view h3,
+.theme-dark .markdown-preview-view h4,
+.theme-dark .markdown-preview-view h5,
+.theme-dark .markdown-preview-view h6 {
+  color: var(--interactive-accent);
+}
+
+.markdown-preview-view h1 {
+  font-size: 1.7em;
+  font-weight: 700;
+  margin: 24px 0 10px;
+}
+
+.markdown-preview-view h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 20px 0 8px;
+  padding-left: 10px;
+  border-left: 4px solid #135ce0;
+}
+
+.theme-dark .markdown-preview-view h2 {
+  border-left-color: var(--interactive-accent);
+}
+
+.markdown-preview-view h3 {
+  font-size: 1.15em;
+  font-weight: 600;
+  margin: 16px 0 6px;
+}
+
+.markdown-preview-view h4 {
+  font-size: 1em;
+  font-weight: 600;
+  margin: 14px 0 6px;
+}
+
+/* ============================================
+   列表
+   ============================================ */
+
+.markdown-preview-view ul {
+  list-style: disc;
+  margin-left: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 0;
+}
+
+.markdown-preview-view ol {
+  margin-left: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-preview-view li {
+  color: #595959;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.theme-dark .markdown-preview-view li {
+  color: var(--text-normal);
+}
+
+/* ============================================
+   引用块
+   ============================================ */
+
+.markdown-preview-view blockquote {
+  background-color: #fff9f9;
+  margin: 2em 0;
+  padding: 10px 24px;
+  border-left: 4px solid #b2aec5;
+}
+
+.markdown-preview-view blockquote p {
+  color: #666;
+  line-height: 2;
+}
+
+.theme-dark .markdown-preview-view blockquote {
+  background-color: #2e2e35;
+  border-left-color: #b2aec5;
+}
+
+.theme-dark .markdown-preview-view blockquote p {
+  color: #c8c8d0;
+}
+
+/* ============================================
+   链接
+   ============================================ */
+
+.markdown-preview-view a {
+  color: #036aca;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(3, 106, 202, 0.8);
+}
+
+.markdown-preview-view a:hover {
+  border-bottom-color: #036aca;
+}
+
+.theme-dark .markdown-preview-view a {
+  color: #4493f8;
+  border-bottom-color: rgba(68, 147, 248, 0.6);
+}
+
+/* ============================================
+   加粗
+   ============================================ */
+
+.markdown-preview-view strong {
+  color: #036aca;
+}
+
+.markdown-preview-view em strong {
+  color: #036aca;
+}
+
+.theme-dark .markdown-preview-view strong,
+.theme-dark .markdown-preview-view em strong {
+  color: #4493f8;
+}
+
+/* ============================================
+   分割线
+   ============================================ */
+
+.markdown-preview-view hr {
+  border: none;
+  border-top: 1px solid var(--background-modifier-border);
+  margin: 24px 0;
+}
+
+.theme-dark .markdown-preview-view hr {
+  border-top-color: var(--background-modifier-border);
+}
+
+/* ============================================
+   代码块
+   ============================================ */
+
+.markdown-preview-view pre {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 16px 0;
+  overflow-x: auto;
+}
+
+.markdown-preview-view pre code {
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+  display: block;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* ============================================
+   行内代码
+   ============================================ */
+
+.markdown-preview-view code {
+  color: #ff502c;
+  background-color: #fff5f5;
+  font-size: 0.87em;
+  border-radius: 2px;
+  padding: 0.065em 0.4em;
+  word-break: break-word;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.theme-dark .markdown-preview-view code {
+  color: #ff6b4a;
+  background-color: var(--code-background);
+}
+
+/* 代码块内 code 不继承行内样式 */
+.markdown-preview-view pre code {
+  background-color: transparent;
+  color: inherit;
+  border-radius: 0;
+  padding: 0;
+  font-size: 13px;
+}
+
+/* ============================================
+   表格
+   ============================================ */
+
+.markdown-preview-view table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.markdown-preview-view th,
+.markdown-preview-view td {
+  border: 1px solid #dfe2e5;
+  padding: 0.6em 1em;
+}
+
+.markdown-preview-view tr {
+  border-top: 1px solid #dfe2e5;
+}
+
+.markdown-preview-view tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.theme-dark .markdown-preview-view th,
+.theme-dark .markdown-preview-view td {
+  border-color: #444c56;
+}
+
+.theme-dark .markdown-preview-view tr {
+  border-top-color: #444c56;
+}
+
+.theme-dark .markdown-preview-view tr:nth-child(2n) {
+  background-color: #2a2a2c;
+}
+
+/* ============================================
+   kbd 键盘标签
+   ============================================ */
+
+.markdown-preview-view kbd {
+  color: white;
+  background-color: #135ce0;
+  border: 1px solid #135ce0;
+  border-radius: 5px;
+  padding: 2px;
+  font-weight: bold;
+  margin: auto 5px;
+  font-size: small;
+}
+
+/* ============================================
+   图片
+   ============================================ */
+
+.markdown-preview-view img {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+/* ============================================
+   标题后紧跟内容去掉多余间距
+   ============================================ */
+
+.markdown-preview-view h1 + p,
+.markdown-preview-view h2 + p,
+.markdown-preview-view h3 + p,
+.markdown-preview-view h4 + p,
+.markdown-preview-view h1 + ul,
+.markdown-preview-view h2 + ul,
+.markdown-preview-view h3 + ul,
+.markdown-preview-view h1 + ol,
+.markdown-preview-view h2 + ol,
+.markdown-preview-view h3 + ol {
+  margin-top: 0;
+}
+
+/* ============================================
+   编辑器行间距
+   ============================================ */
+
+.markdown-source-view.mod-cm6 .cm-contentContainer {
+  line-height: 2;
+}
+
+.markdown-source-view.mod-cm6 .cm-line {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+/* ============================================
+   编辑器标记色彩（掘金 smartblue 风格）
+   ============================================ */
+
+/* # 标题 — 蓝色，字号统一 */
+body .cm-s-obsidian .cm-formatting-header,
+body .cm-s-obsidian .cm-header-1,
+body .cm-s-obsidian .cm-header-2,
+body .cm-s-obsidian .cm-header-3,
+.cm-s-obsidian .cm-header-4,
+.cm-s-obsidian .cm-header-5,
+.cm-s-obsidian .cm-header-6 {
+  color: #1ba2f0;
+  font-weight: 700;
+  font-size: var(--font-text-size);
+}
+
+/* > 引用 — 橙色（符号+内容） */
+body .cm-s-obsidian .cm-formatting-quote {
+  color: #fd7741;
+}
+
+body .cm-s-obsidian .HyperMD-quote {
+  color: #fd7741;
+}
+
+body .markdown-source-view.mod-cm6 .HyperMD-quote {
+  color: #fd7741;
+}
+
+/* [链接](url) — 紫粉 */
+body .cm-s-obsidian .cm-link,
+body .cm-s-obsidian .cm-url,
+body .cm-s-obsidian .cm-formatting-link {
+  color: #bb51b8;
+}
+
+/* ![]() 图片标记 — 橙色 */
+body .cm-s-obsidian .cm-formatting-image,
+body .cm-s-obsidian .cm-image {
+  color: #fd7741;
+}
+
+/* [[双链]] — 紫粉 */
+body .cm-s-obsidian .cm-hmd-internal-link {
+  color: #bb51b8;
+}
+
+/* `行内代码` — 青绿 */
+body .cm-s-obsidian .cm-formatting-code {
+  color: #009e9d;
+}
+
+body .cm-s-obsidian .cm-inline-code,
+body .markdown-source-view.mod-cm6 .cm-inline-code {
+  color: #009e9d;
+}
+
+/* ```代码块``` 围栏 — 青绿 */
+body .cm-s-obsidian .HyperMD-codeblock-begin,
+body .cm-s-obsidian .HyperMD-codeblock-end {
+  color: #009e9d;
+}
+
+/* **加粗** 标记 — 橙黄 */
+body .cm-s-obsidian .cm-formatting-strong {
+  color: rgb(236, 127, 79);
+  font-weight: 400;
+  vertical-align: baseline;
+}
+
+/* 加粗文字 — 蓝色 */
+body .cm-s-obsidian .cm-strong,
+body .markdown-source-view.mod-cm6 .cm-strong {
+  color: #036aca;
+  font-weight: 600;
+}
+
+/* *斜体* 标记 — 紫粉 */
+body .cm-s-obsidian .cm-formatting-em {
+  color: #bb51b8;
+}
+
+.cm-s-obsidian .cm-em {
+  color: var(--text-normal);
+}
+
+/* ~~删除线~~ — 灰色 */
+.cm-s-obsidian .cm-formatting-strikethrough,
+.cm-s-obsidian .cm-strikethrough {
+  color: var(--text-muted);
+}
+
+/* ==高亮== 标记 — 橙色 */
+body .cm-s-obsidian .cm-formatting-highlight {
+  color: #fd7741;
+}
+
+/* --- 分割线 — 灰色 */
+.cm-s-obsidian .cm-hr {
+  color: var(--text-muted);
+}
+
+/* #tag — 青绿 */
+body .cm-s-obsidian .cm-hashtag {
+  color: #009e9d;
+}
+
+/* ============================================
+   内联标题（文件名）
+   ============================================ */
+
+body .inline-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+/* ============================================
+   标签样式（预览模式）
+   ============================================ */
+
+.markdown-preview-view .tag {
+  background-color: var(--background-secondary);
+  color: var(--text-muted);
+  font-size: 0.85em;
+  padding: 2px 8px;
+  border-radius: 12px;
+  border: none;
+  text-decoration: none;
+}
+
+.theme-dark .markdown-preview-view .tag {
+  background-color: var(--background-secondary);
+  color: var(--text-muted);
+}
+
+/* ============================================
+   Mermaid 图表（深色模式适配）
+   ============================================ */
+
+.theme-dark {
+  --mermaid-font-color: #e6edf3;
+  --mermaid-note-bg-color: #2a2a2c;
+  --mermaid-note-border-color: #8b949e;
+}
+
+.theme-dark .node .label,
+.theme-dark .node .label div,
+.theme-dark .edgeLabel .label,
+.theme-dark .edgeLabel .label div,
+.theme-dark .edgeLabel span,
+.theme-dark .nodeLabel,
+.theme-dark .edgeLabel {
+  color: #e6edf3;
+}
+
+.theme-dark .node rect,
+.theme-dark .node circle,
+.theme-dark .node polygon {
+  fill: #2a2a2c;
+  stroke: #8b949e;
+}
+
+.theme-dark .edgeLabel rect {
+  fill: #2a2a2c;
+}
+
+.theme-dark .edgeLabel .label,
+.theme-dark .edgeLabel .label div,
+.theme-dark .edgeLabel span,
+.theme-dark .edgeLabel p,
+.theme-dark .edgeLabel {
+  color: #e6edf3;
+  background-color: #2a2a2c;
+}
+
+.theme-dark .edgePath path,
+.theme-dark .flowchart-link {
+  stroke: #8b949e;
+}
+
+.theme-dark marker path {
+  fill: #8b949e;
+}
+
+
+/* ============================================
+   Graph View 图谱样式
+   ============================================ */
+
+.graph-view.color-circle,
+.graph-view.color-fill-highlight,
+.graph-view.color-line-highlight {
+  color: var(--interactive-accent) !important;
+}
+
+.graph-view.color-text {
+  color: var(--text-normal) !important;
+}
+
+.graph-view.color-line {
+  color: var(--background-modifier-border) !important;
+}
+
+.graph-view.color-fill {
+  color: var(--interactive-accent) !important;
+}
