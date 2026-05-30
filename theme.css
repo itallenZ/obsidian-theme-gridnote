@@ -542,18 +542,18 @@ body .inline-title {
 .theme-dark .edgeLabel span,
 .theme-dark .nodeLabel,
 .theme-dark .edgeLabel {
-  color: #e6edf3;
+  color: #e6edf3 !important;
 }
 
 .theme-dark .node rect,
 .theme-dark .node circle,
 .theme-dark .node polygon {
-  fill: #2a2a2c;
-  stroke: #8b949e;
+  fill: #2a2a2c !important;
+  stroke: #8b949e !important;
 }
 
 .theme-dark .edgeLabel rect {
-  fill: #2a2a2c;
+  fill: #2a2a2c !important;
 }
 
 .theme-dark .edgeLabel .label,
@@ -561,17 +561,17 @@ body .inline-title {
 .theme-dark .edgeLabel span,
 .theme-dark .edgeLabel p,
 .theme-dark .edgeLabel {
-  color: #e6edf3;
-  background-color: #2a2a2c;
+  color: #e6edf3 !important;
+  background-color: #2a2a2c !important;
 }
 
 .theme-dark .edgePath path,
 .theme-dark .flowchart-link {
-  stroke: #8b949e;
+  stroke: #8b949e !important;
 }
 
 .theme-dark marker path {
-  fill: #8b949e;
+  fill: #8b949e !important;
 }
 
 
